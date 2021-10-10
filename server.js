@@ -1,5 +1,4 @@
 import express from 'express'
-import axios from 'axios'
 const app = express()
 import cors from 'cors'
 import pool from './db.js'
@@ -12,11 +11,9 @@ app.use(express.json()) // <--- req.body
 
 
 
-// axios.get('https://restcountries.com/v3.1/all')
-//   .then(res => {
-//     console.log(JSON.stringify(res.data))
-//   })
 
+import country from './controllers/countriesController.js'
+app.use('/countries', country)
 
 import user from './controllers/userController.js'
 app.use('/users', user)
