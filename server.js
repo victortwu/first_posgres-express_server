@@ -5,7 +5,7 @@ import pool from './db.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const PORT = 5000
+const PORT = 4000
 
 app.use(cors())
 
@@ -22,6 +22,9 @@ app.use('/users', user)
 
 import weather from './controllers/weatherController.js'
 app.use('/weather', weather)
+
+import weatherMap from './controllers/weatherMapApiController.js'
+app.use('/weatherMap', weatherMap)
 
 
 
